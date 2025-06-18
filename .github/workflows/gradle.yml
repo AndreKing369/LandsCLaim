@@ -15,12 +15,12 @@ jobs:
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
@@ -31,7 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: '**/build/libs'
 
@@ -46,12 +46,12 @@ jobs:
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
@@ -67,7 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload CodeCov Report
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: '**/build/reports/jacoco/**/*.xml'
 
@@ -90,18 +90,18 @@ jobs:
           java-version: 17
 
       - name: Set up Node.js v16.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16.x'
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
