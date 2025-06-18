@@ -1,1 +1,7 @@
-# add your configuration properties here
+name: RaidClaims
+version: 1.0
+main: dev.svvo.plugins.template.RaidClaims
+api-version: 1.16
+commands:
+  claim:
+    description: Claim the chunk you're in
